@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Seu pedido foi aprovado</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --navy: #101F38;
+    --orange: #F26B1D;
+    --green: #1F9D55;
+    --green-dark: #17834A;
+    --gray-dark: #3B4550;
+    --gray: #6B7580;
+    --gray-light: #9AA3AD;
+    --bg-end: #F4F6F8;
+    --cover: #041849;
+    --play: #FF0000;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  [hidden] { display: none !important; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  body {
+    min-height: 100vh;
+    background: #FFFFFF linear-gradient(180deg, #FFFFFF 0%, #FFFFFF 35%, var(--bg-end) 100%);
+    color: var(--navy);
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ===== 1. BARRA DE URGÊNCIA ===== */
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--orange);
+    color: #FFFFFF;
+    box-shadow: 0 2px 10px rgba(16, 31, 56, 0.18);
+  }
+
+  .topbar__inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 11px 16px;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.3;
+    text-align: center;
+  }
+
+  .topbar__icon {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    animation: alertPulse 1.6s ease-in-out infinite;
+  }
+
+  @keyframes alertPulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.55; transform: scale(1.15); }
+  }
+
+  .topbar__progress {
+    position: relative;
+    height: 3px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .topbar__progress::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 3px;
+    animation: indeterminate 1.8s ease-in-out infinite;
+  }
+
+  @keyframes indeterminate {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(250%); }
+  }
+
+  /* ===== CONTEÚDO ===== */
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 28px 18px 40px;
+    text-align: center;
+  }
+
+  /* ===== 2. HEADLINE ===== */
+  .badge {
+    display: inline-block;
+    background: var(--navy);
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    padding: 7px 14px;
+    border-radius: 999px;
+    margin: 0 0 18px;
+  }
+
+  .headline {
+    font-family: 'Archivo', 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 1.15;
+    color: var(--navy);
+    margin: 0 0 14px;
+    letter-spacing: -0.01em;
+  }
+
+  .headline .hl { color: var(--orange); }
+
+  .subheadline {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.55;
+    color: var(--gray-dark);
+    margin: 0 auto 26px;
+    max-width: 640px;
+  }
+
+  /* ===== 3. VSL (player próprio, vídeo vertical 9:16) ===== */
+  .vsl {
+    position: relative;
+    max-width: 400px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+    border: 3px solid var(--navy);
+    border-radius: 14px;
+    overflow: hidden;
+    background: var(--cover);
+    box-shadow: 0 14px 34px rgba(16, 31, 56, 0.18), 0 3px 8px rgba(16, 31, 56, 0.10);
+    -webkit-tap-highlight-color: transparent;
+    isolation: isolate;
+  }
+
+  .vsl video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    background: var(--cover);
+    cursor: pointer;
+  }
+
+  .vsl-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    width: 100%;
+    margin: 0;
+    padding: 20px;
+    border: 0;
+    color: #FFFFFF;
+    font-family: 'Archivo', 'Inter', sans-serif;
+    text-align: center;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .vsl-smart {
+    background: linear-gradient(180deg, rgba(4, 24, 73, 0.10) 0%, rgba(4, 24, 73, 0.55) 55%, rgba(4, 24, 73, 0.88) 100%);
+  }
+
+  .vsl-paused {
+    background: rgba(4, 24, 73, 0.55);
+  }
+
+  .vsl-overlay__top {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.02em;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .vsl-overlay__circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    background: var(--play);
+    box-shadow: 0 8px 26px rgba(255, 0, 0, 0.45);
+    animation: playPulse 1.8s ease-in-out infinite;
+  }
+
+  .vsl-overlay__circle svg { width: 44px; height: 44px; }
+
+  @keyframes playPulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 8px 26px rgba(255, 0, 0, 0.45), 0 0 0 0 rgba(255, 0, 0, 0.45); }
+    50% { transform: scale(1.06); box-shadow: 0 8px 26px rgba(255, 0, 0, 0.45), 0 0 0 14px rgba(255, 0, 0, 0); }
+  }
+
+  .vsl-overlay__label {
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 1.2;
+    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  }
+
+  .vsl-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    width: 46px;
+    height: 46px;
+    margin: -23px 0 0 -23px;
+    border: 4px solid rgba(255, 255, 255, 0.25);
+    border-top-color: #FFFFFF;
+    border-radius: 50%;
+    animation: spin 0.9s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .vsl-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 3;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    pointer-events: none;
+  }
+
+  .vsl-progress__fill {
+    height: 100%;
+    width: 0;
+    background: var(--orange);
+  }
+
+  .sound-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    margin: 12px 0 0;
+    font-size: 13px;
+    color: var(--gray);
+  }
+
+  .sound-hint svg { width: 17px; height: 17px; flex: 0 0 auto; }
+
+  /* ===== 4. BOTÕES ===== */
+  #cta-wrap {
+    display: none;
+    margin: 30px auto 0;
+    max-width: 560px;
+    scroll-margin-top: 90px;
+  }
+
+  #cta-wrap.is-visible {
+    display: block;
+    animation: revealUp 0.5s ease-out both;
+  }
+
+  #cta-wrap.no-anim { animation: none; }
+
+  @keyframes revealUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .btn-accept {
+    display: block;
+    width: 100%;
+    border: 0;
+    margin: 0;
+    padding: 18px 18px 16px;
+    background: var(--green);
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: 'Archivo', 'Inter', sans-serif;
+    text-align: center;
+    box-shadow: 0 10px 24px rgba(31, 157, 85, 0.35), 0 3px 0 #157443;
+    animation: ctaPulse 2s ease-in-out infinite;
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn-accept:hover { background: var(--green-dark); }
+  .btn-accept:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+
+  .btn-accept__main {
+    display: block;
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 1.2;
+    letter-spacing: 0.01em;
+  }
+
+  .btn-accept__sub {
+    display: block;
+    margin-top: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    opacity: 0.92;
+  }
+
+  @keyframes ctaPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.025); }
+  }
+
+  .btn-refuse {
+    display: inline-block;
+    margin: 18px auto 0;
+    padding: 6px 8px;
+    background: none;
+    border: 0;
+    color: var(--gray);
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+  }
+
+  .btn-refuse:hover { color: var(--gray-dark); }
+
+  .secure {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    margin: 14px 0 0;
+    font-size: 12.5px;
+    color: var(--gray);
+  }
+
+  .secure svg { width: 14px; height: 14px; flex: 0 0 auto; }
+
+  /* ===== 5. RODAPÉ ===== */
+  .footer {
+    padding: 22px 18px 30px;
+    text-align: center;
+    font-size: 12px;
+    color: var(--gray-light);
+  }
+
+  /* ===== DESKTOP ===== */
+  @media (min-width: 768px) {
+    .topbar__inner { font-size: 15px; }
+    .page { padding: 44px 24px 56px; }
+    .badge { font-size: 13px; margin-bottom: 22px; }
+    .headline { font-size: 40px; margin-bottom: 18px; }
+    .subheadline { font-size: 19px; margin-bottom: 34px; }
+    .sound-hint { font-size: 14px; }
+    #cta-wrap { margin-top: 38px; }
+    .btn-accept { padding: 22px 24px 19px; }
+    .btn-accept__main { font-size: 22px; }
+    .btn-accept__sub { font-size: 15px; }
+  }
+
+  /* ===== MOVIMENTO REDUZIDO ===== */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation: none !important;
+      transition: none !important;
+      scroll-behavior: auto !important;
+    }
+    .topbar__progress::before { left: 30%; }
+    .vsl-spinner { border-top-color: rgba(255, 255, 255, 0.25); border-right-color: #FFFFFF; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- 1. BARRA DE URGÊNCIA -->
+  <header class="topbar" role="status">
+    <div class="topbar__inner">
+      <svg class="topbar__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+        <line x1="12" y1="9" x2="12" y2="13"/>
+        <line x1="12" y1="17" x2="12.01" y2="17"/>
+      </svg>
+      <span>Pedido aprovado! Falta só uma etapa. Não feche esta página.</span>
+    </div>
+    <div class="topbar__progress" aria-hidden="true"></div>
+  </header>
+
+  <main class="page">
+
+    <!-- 2. HEADLINE -->
+    <p class="badge">ATENÇÃO: ASSISTA ATÉ O FINAL</p>
+    <h1 class="headline">Antes de abrir seu Guia Visual de Componentes, <span class="hl">assista a este vídeo</span> de 2 minutos</h1>
+    <p class="subheadline">Tem uma coisa que só aparece nesta página. Ela te mostra o que fazer quando a placa chega em curto e você não sabe por onde começar.</p>
+
+    <!-- 3. VSL (player próprio) -->
+    <div class="vsl" id="vsl">
+      <video id="vsl-video"
+             src="vsl-upsell.mp4"
+             playsinline webkit-playsinline muted autoplay loop preload="auto"
+             disablepictureinpicture disableremoteplayback
+             controlslist="nodownload nofullscreen noplaybackrate noremoteplayback"></video>
+
+      <div class="vsl-spinner" id="vsl-spinner" aria-hidden="true"></div>
+
+      <button type="button" class="vsl-overlay vsl-smart" id="vsl-smart" aria-label="Ativar o som e assistir desde o início">
+        <span class="vsl-overlay__top" id="vsl-smart-top">Seu vídeo já começou</span>
+        <span class="vsl-overlay__circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5" fill="#FFFFFF"/>
+            <line x1="23" y1="9" x2="17" y2="15"/>
+            <line x1="17" y1="9" x2="23" y2="15"/>
+          </svg>
+        </span>
+        <span class="vsl-overlay__label" id="vsl-smart-label">Clique para ouvir</span>
+      </button>
+
+      <button type="button" class="vsl-overlay vsl-paused" id="vsl-paused" aria-label="Continuar assistindo" hidden>
+        <span class="vsl-overlay__circle" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><polygon points="8 5 20 12 8 19 8 5" fill="#FFFFFF"/></svg>
+        </span>
+        <span class="vsl-overlay__label" id="vsl-paused-label">Continuar assistindo</span>
+      </button>
+
+      <div class="vsl-progress" aria-hidden="true"><div class="vsl-progress__fill" id="vsl-progress"></div></div>
+    </div>
+    <p class="sound-hint">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
+        <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
+        <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
+      </svg>
+      Confira se o som do seu celular está ligado
+    </p>
+
+    <!-- 4. BOTÕES (existem desde o carregamento, escondidos por CSS até REVEAL_AT do vídeo).
+         Quem chega do checkout (URL com kirvano_upsell): o script da Kirvano bloqueia o link e abre o modal one click.
+         Quem chega de outra fonte: o script da Kirvano não inicia e o link leva ao checkout / página de recusa. -->
+    <div id="cta-wrap" aria-hidden="true">
+      <a href="https://pay.kirvano.com/481a5778-a127-4f92-a708-1f0543a78bde" class="btn-accept kirvano-payment-trigger">
+        <span class="btn-accept__main">SIM, QUERO O GUIA COMPLETO POR R$ 67</span>
+        <span class="btn-accept__sub">Adicionar ao meu pedido</span>
+      </a>
+
+      <a href="COLE_AQUI_URL_DO_DOWNSELL" class="btn-refuse kirvano-refuse-trigger">Não, obrigado. Quero continuar sem o guia.</a>
+
+      <p class="secure">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+          <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+        Pagamento seguro processado pela Kirvano
+      </p>
+    </div>
+
+  </main>
+
+  <!-- 5. RODAPÉ -->
+  <footer class="footer">© Todos os direitos reservados.</footer>
+
+<script>
+/*
+  Player próprio + revelação dos botões no tempo REVEAL_AT do vídeo.
+
+  Os botões aparecem quando o TEMPO REAL do vídeo (video.currentTime) chega
+  a REVEAL_AT. Pausar, trocar de aba ou o vídeo travar para carregar não adianta
+  nada, porque o tempo do vídeo para junto. Não há barra para avançar o vídeo.
+
+  Fluxo do player (igual ao "smart autoplay" do LiteVideo):
+  1. O vídeo começa sozinho, mudo, com o aviso "Clique para ouvir".
+  2. No toque, ativa o som e volta para o 0:00.
+  3. Depois disso, tocar no vídeo pausa e continua.
+
+  Testes:
+  ?teste=1     mostra os botões na hora
+  ?inicio=100  começa o vídeo em 1:40 (para testar a revelação)
+  Este script não registra nenhum evento nos botões da Kirvano.
+*/
+(function () {
+  var REVEAL_AT = 111.5; // segundos do vídeo em que os botões aparecem (ajuste ao momento da oferta)
+  var PROGRESS_SPEED = 2;
+  var STORAGE_KEY = 'upsell_componentes_cta_revelado';
+
+  var wrap = document.getElementById('cta-wrap');
+  var video = document.getElementById('vsl-video');
+  var smartBtn = document.getElementById('vsl-smart');
+  var smartTop = document.getElementById('vsl-smart-top');
+  var smartLabel = document.getElementById('vsl-smart-label');
+  var pausedBtn = document.getElementById('vsl-paused');
+  var pausedLabel = document.getElementById('vsl-paused-label');
+  var spinner = document.getElementById('vsl-spinner');
+  var progress = document.getElementById('vsl-progress');
+
+  var params;
+  try { params = new URLSearchParams(window.location.search); } catch (e) { params = null; }
+  var isTest = !!params && params.get('teste') === '1';
+  var startAt = params ? parseFloat(params.get('inicio')) : NaN;
+  if (!(startAt > 0)) startAt = 0;
+
+  /* ---------- Revelação dos botões ---------- */
+  var revealed = false;
+
+  function saveRevealed() {
+    try { window.localStorage.setItem(STORAGE_KEY, '1'); } catch (e) {}
+  }
+
+  function wasRevealed() {
+    try { return window.localStorage.getItem(STORAGE_KEY) === '1'; } catch (e) { return false; }
+  }
+
+  function reveal(opts) {
+    if (revealed) return;
+    revealed = true;
+    opts = opts || {};
+
+    if (opts.instant) wrap.classList.add('no-anim');
+    wrap.classList.add('is-visible');
+    wrap.removeAttribute('aria-hidden');
+    saveRevealed();
+
+    if (opts.scroll) {
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      requestAnimationFrame(function () {
+        wrap.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center' });
+      });
+    }
+  }
+
+  // ?inicio= é para testar a revelação, então ignora o que ficou gravado
+  if (isTest || (startAt === 0 && wasRevealed())) {
+    reveal({ instant: true, scroll: false });
+  }
+
+  function checkReveal() {
+    if (!revealed && video.currentTime >= REVEAL_AT) reveal({ scroll: true });
+  }
+
+  /* ---------- Player ---------- */
+  var smartMode = true;
+  var started = false;
+
+  video.muted = true;
+  video.defaultMuted = true;
+
+  function seekTo(t) {
+    try { video.currentTime = t; } catch (e) {}
+  }
+
+  function safePlay() {
+    var p = video.play();
+    if (p && typeof p.catch === 'function') {
+      p.catch(function () {
+        // Autoplay bloqueado (ex.: modo economia de energia no iPhone)
+        if (smartMode) {
+          smartTop.textContent = 'Seu vídeo está pronto';
+          smartLabel.textContent = 'Clique para assistir';
+        } else {
+          updatePausedUI();
+        }
+        spinner.hidden = true;
+      });
+    }
+  }
+
+  function accelerated(real) {
+    var fastZone = 0.67;
+    var realFastEnd = fastZone / PROGRESS_SPEED;
+    if (real <= realFastEnd) return real * PROGRESS_SPEED;
+    var slow = (real - realFastEnd) / (1 - realFastEnd);
+    return fastZone + (1 - Math.pow(1 - slow, 3)) * (1 - fastZone);
+  }
+
+  function updateProgress() {
+    var d = video.duration;
+    if (!d || !isFinite(d)) return;
+    var pct = smartMode ? 0 : accelerated(Math.min(video.currentTime / d, 1)) * 100;
+    progress.style.width = pct + '%';
+  }
+
+  function updatePausedUI() {
+    pausedBtn.hidden = smartMode || !started || !video.paused;
+    pausedLabel.textContent = video.ended ? 'Assistir de novo' : 'Continuar assistindo';
+  }
+
+  var rafId = null;
+  function loop() {
+    checkReveal();
+    updateProgress();
+    rafId = (!video.paused && !video.ended) ? requestAnimationFrame(loop) : null;
+  }
+
+  function startLoop() {
+    if (rafId === null) rafId = requestAnimationFrame(loop);
+  }
+
+  video.addEventListener('loadedmetadata', function () {
+    if (startAt > 0 && video.currentTime < startAt) seekTo(Math.min(startAt, video.duration - 1));
+  });
+
+  video.addEventListener('timeupdate', function () {
+    checkReveal();
+    updateProgress();
+  });
+
+  video.addEventListener('playing', function () {
+    spinner.hidden = true;
+    updatePausedUI();
+    startLoop();
+  });
+
+  video.addEventListener('waiting', function () { spinner.hidden = false; });
+  video.addEventListener('canplay', function () { if (!video.paused || smartMode) spinner.hidden = true; });
+  video.addEventListener('pause', updatePausedUI);
+  video.addEventListener('ended', function () { updatePausedUI(); updateProgress(); });
+
+  // 1º toque: ativa o som e volta ao início (ou ao ?inicio=)
+  smartBtn.addEventListener('click', function () {
+    smartMode = false;
+    started = true;
+    smartBtn.hidden = true;
+    video.loop = false;
+    video.muted = false;
+    video.defaultMuted = false;
+    video.removeAttribute('muted');
+    if (video.volume === 0) video.volume = 1;
+    seekTo(startAt);
+    updateProgress();
+    safePlay();
+  });
+
+  // Depois do 1º toque: tocar no vídeo pausa
+  video.addEventListener('click', function () {
+    if (smartMode) { smartBtn.click(); return; }
+    if (!video.paused) video.pause();
+  });
+
+  pausedBtn.addEventListener('click', function () {
+    if (video.ended) seekTo(0);
+    safePlay();
+  });
+
+  safePlay();
+})();
+</script>
+
+<!-- ============================================================ -->
+<!-- SCRIPT DE UPSELL ONE CLICK DA KIRVANO -->
+<!-- ============================================================ -->
+<script>
+  var offer = "481a5778-a127-4f92-a708-1f0543a78bde";
+  var nextPageURL = null;
+  var refusePageURL = "COLE_AQUI_URL_DO_DOWNSELL";
+</script>
+<script src="https://snippets.kirvano.com/upsell.min.js"></script>
+
+</body>
+</html>

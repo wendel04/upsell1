@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Última oferta: Fichas com 30% de desconto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #101F38;
+    --orange: #F26B1D;
+    --green: #1F9D55;
+    --green-dark: #17804A;
+    --red: #E0453A;
+    --gray-dark: #3B4550;
+    --gray: #6B7580;
+    --bg: #FFFFFF;
+    --bg-alt: #F4F6F8;
+    --orange-soft: #FFF3EB;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--gray-dark);
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 { font-family: "Archivo", "Inter", sans-serif; color: var(--navy); margin: 0; }
+  p { margin: 0 0 14px; }
+  svg { display: block; }
+
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 18px; }
+  section { padding: 44px 0; }
+  .alt { background: var(--bg-alt); }
+  .section-title {
+    font-size: 26px; font-weight: 900; line-height: 1.15;
+    text-align: center; margin-bottom: 28px;
+  }
+
+  /* Barra fixa */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--red); color: #fff;
+    font-weight: 700; font-size: 14px; line-height: 1.35;
+    padding: 10px 18px;
+    display: flex; align-items: center; justify-content: center; gap: 10px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(16,31,56,.18);
+  }
+  .topbar svg { flex: 0 0 auto; width: 20px; height: 20px; animation: alertPulse 1.8s ease-in-out infinite; }
+  @keyframes alertPulse { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.18); opacity: .8; } }
+
+  /* Hero */
+  .hero { padding-top: 32px; text-align: center; overflow-x: clip; }
+  .pill {
+    display: inline-block; background: var(--orange); color: #fff;
+    font-family: "Archivo", sans-serif; font-weight: 800; font-size: 13px;
+    letter-spacing: .06em; padding: 7px 16px; border-radius: 999px;
+    margin-bottom: 18px;
+  }
+  .hero h1 { font-size: 28px; line-height: 1.12; font-weight: 900; margin-bottom: 16px; }
+  .hl { color: var(--orange); }
+  .hero .sub { font-size: 17px; color: var(--gray-dark); max-width: 600px; margin: 0 auto 8px; }
+
+  /* Mockup */
+  .mockup { position: relative; max-width: 520px; margin: 18px auto 26px; }
+  .mockup img {
+    display: block; width: 100%; height: auto;
+    border-radius: 14px; box-shadow: 0 16px 40px rgba(16,31,56,.18);
+  }
+  .seal {
+    position: absolute; bottom: 13%; right: 4px; z-index: 5;
+    width: 84px; height: 84px; border-radius: 50%;
+    background: var(--red); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Archivo", sans-serif; font-weight: 900; font-size: 26px;
+    border: 4px solid #fff; box-shadow: 0 8px 18px rgba(224,69,58,.4);
+    transform: rotate(-14deg);
+    animation: sway 3.2s ease-in-out infinite;
+  }
+  @keyframes sway { 0%,100% { transform: rotate(-14deg); } 50% { transform: rotate(-4deg); } }
+
+  /* CTAs */
+  .cta {
+    display: block; width: 100%; max-width: 520px; margin: 0 auto;
+    background: var(--green); color: #fff; text-decoration: none; text-align: center;
+    font-family: "Archivo", sans-serif; font-weight: 800; font-size: 18px; letter-spacing: .02em;
+    padding: 18px 20px; border-radius: 12px;
+    box-shadow: 0 10px 22px rgba(31,157,85,.32);
+    transition: background .2s, transform .2s;
+  }
+  .cta:hover { background: var(--green-dark); transform: translateY(-2px); }
+  .cta.orange { background: var(--orange); box-shadow: 0 10px 22px rgba(242,107,29,.32); }
+  .cta.orange:hover { background: #D85A12; }
+
+  /* Lead */
+  .lead p { font-size: 17px; color: var(--gray-dark); }
+  .lead p:first-child { font-size: 19px; font-weight: 600; color: var(--navy); }
+  .lead strong { color: var(--navy); }
+
+  /* Cards */
+  .cards { display: grid; gap: 16px; }
+  .card {
+    background: #fff; border: 1px solid #E3E7EC; border-radius: 14px;
+    padding: 20px; display: flex; gap: 16px; align-items: flex-start;
+    box-shadow: 0 4px 14px rgba(16,31,56,.06);
+  }
+  .card .ico {
+    flex: 0 0 auto; width: 52px; height: 52px; border-radius: 12px;
+    background: var(--orange-soft); display: flex; align-items: center; justify-content: center;
+  }
+  .card .ico svg { width: 28px; height: 28px; }
+  .card .num {
+    font-family: "Archivo", sans-serif; font-weight: 900; font-size: 40px; line-height: 1;
+    color: var(--orange); margin-bottom: 4px;
+  }
+  .card .num small { font-size: 15px; color: var(--navy); font-weight: 800; margin-left: 4px; }
+  .card h3 { font-size: 15px; font-weight: 800; letter-spacing: .02em; line-height: 1.3; margin-bottom: 6px; }
+  .card p { font-size: 15.5px; margin: 0; line-height: 1.55; }
+  .bonus {
+    margin-top: 18px; background: var(--orange-soft); border: 2px solid var(--orange);
+    border-radius: 14px; padding: 22px 20px;
+  }
+  .bonus h3 { color: var(--orange); font-size: 20px; font-weight: 900; margin-bottom: 12px; text-align: center; }
+  .bonus ul { list-style: none; margin: 0; padding: 0; }
+  .bonus li {
+    display: flex; gap: 10px; align-items: flex-start;
+    font-weight: 600; color: var(--navy); font-size: 16px; padding: 7px 0;
+  }
+  .bonus li svg { flex: 0 0 auto; width: 22px; height: 22px; margin-top: 1px; }
+  .access-line { text-align: center; font-size: 15px; color: var(--gray); margin: 18px 0 0; }
+
+  /* Passos */
+  .steps { display: grid; gap: 14px; counter-reset: s; list-style: none; margin: 0; padding: 0; }
+  .step {
+    background: #fff; border-radius: 14px; padding: 18px;
+    display: flex; gap: 14px; align-items: center;
+    box-shadow: 0 4px 14px rgba(16,31,56,.06);
+  }
+  .step .n {
+    flex: 0 0 auto; width: 44px; height: 44px; border-radius: 50%;
+    background: var(--orange); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-family: "Archivo", sans-serif; font-weight: 900; font-size: 20px;
+  }
+  .step p { margin: 0; font-weight: 600; color: var(--navy); font-size: 16px; line-height: 1.4; }
+
+  /* Oferta */
+  #oferta { scroll-margin-top: 64px; }
+  .offer {
+    background: #fff; border: 3px dashed var(--green); border-radius: 18px;
+    box-shadow: 0 22px 50px rgba(16,31,56,.18);
+    overflow: hidden;
+  }
+  .offer-head {
+    background: var(--green); color: #fff; text-align: center;
+    font-family: "Archivo", sans-serif; font-weight: 900; font-size: 15px; letter-spacing: .08em;
+    padding: 12px 14px;
+  }
+  .offer-body { padding: 24px 18px 26px; text-align: center; }
+  .checklist { list-style: none; margin: 0 auto 22px; padding: 0; max-width: 360px; text-align: left; }
+  .checklist li {
+    display: flex; gap: 10px; align-items: center;
+    font-weight: 600; color: var(--navy); font-size: 16px; padding: 6px 0;
+    border-bottom: 1px solid #EEF1F4;
+  }
+  .checklist li:last-child { border-bottom: 0; }
+  .checklist svg { flex: 0 0 auto; width: 22px; height: 22px; }
+  .price { display: flex; flex-direction: column; align-items: center; gap: 4px; margin-bottom: 6px; }
+  .price .old { color: var(--gray); font-size: 18px; font-weight: 600; text-decoration: line-through; text-decoration-color: var(--red); text-decoration-thickness: 2px; }
+  .price .arrow { width: 24px; height: 24px; }
+  .price-row { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .price .now { font-family: "Archivo", sans-serif; font-weight: 900; color: var(--green); font-size: 52px; line-height: 1; }
+  .price .now small { font-size: 22px; color: var(--navy); font-weight: 800; margin-right: 4px; }
+  .off-tag {
+    background: var(--red); color: #fff; border-radius: 8px;
+    font-family: "Archivo", sans-serif; font-weight: 900; font-size: 14px;
+    padding: 6px 10px; transform: rotate(-4deg);
+  }
+  .per { font-size: 14px; color: var(--gray); margin: 4px 0 20px; }
+
+  .kirvano-payment-trigger {
+    display: block; width: 100%; max-width: 520px; margin: 0 auto;
+    background: var(--green); color: #fff; border: 0; cursor: pointer;
+    text-decoration: none; text-align: center;
+    font-family: "Archivo", sans-serif; font-weight: 800; font-size: 20px; line-height: 1.2;
+    padding: 18px 16px 15px; border-radius: 12px;
+    box-shadow: 0 12px 26px rgba(31,157,85,.38);
+    animation: btnPulse 2s ease-in-out infinite;
+    transition: background .2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .kirvano-payment-trigger:hover { background: var(--green-dark); }
+  .kirvano-payment-trigger:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+  .kirvano-payment-trigger .main { display: block; }
+  .kirvano-payment-trigger .small {
+    display: block; margin-top: 5px;
+    font-family: "Inter", sans-serif; font-weight: 500; font-size: 14px; opacity: .92;
+  }
+  @keyframes btnPulse {
+    0%,100% { transform: scale(1); box-shadow: 0 12px 26px rgba(31,157,85,.38); }
+    50% { transform: scale(1.025); box-shadow: 0 14px 34px rgba(31,157,85,.55); }
+  }
+  .secure {
+    display: flex; align-items: center; justify-content: center; gap: 7px;
+    font-size: 13.5px; color: var(--gray); margin: 14px 0 18px;
+  }
+  .secure svg { width: 16px; height: 16px; }
+  .kirvano-refuse-trigger {
+    display: block; margin: 0 auto; max-width: 440px;
+    background: none; border: 0; padding: 6px 4px; cursor: pointer;
+    color: var(--gray); font-family: "Inter", sans-serif; font-size: 14px; line-height: 1.45;
+    text-decoration: underline; text-align: center;
+  }
+  .kirvano-refuse-trigger:hover { color: var(--gray-dark); }
+
+  /* Por que */
+  .why { background: var(--navy); color: #fff; text-align: center; }
+  .why h2 { color: #fff; font-size: 28px; font-weight: 900; margin-bottom: 14px; }
+  .why p { color: #D9E0EA; margin-bottom: 26px; }
+
+  /* FAQ */
+  .faq details {
+    background: #fff; border: 1px solid #E3E7EC; border-radius: 12px;
+    margin-bottom: 12px; overflow: hidden;
+  }
+  .faq summary {
+    list-style: none; cursor: pointer; padding: 16px 48px 16px 18px; position: relative;
+    font-weight: 700; color: var(--navy); font-size: 16px; line-height: 1.4;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after {
+    content: "+"; position: absolute; right: 18px; top: 50%; transform: translateY(-50%);
+    font-family: "Archivo", sans-serif; font-weight: 900; font-size: 22px; color: var(--orange);
+    transition: transform .2s;
+  }
+  .faq details[open] summary::after { content: "\2212"; }
+  .faq summary:focus-visible { outline: 3px solid var(--orange); outline-offset: -3px; }
+  .faq .ans { padding: 0 18px 16px; font-size: 16px; margin: 0; }
+
+  /* CTA final */
+  .final { text-align: center; }
+  .final h2 { font-size: 26px; font-weight: 900; line-height: 1.2; margin-bottom: 22px; }
+  .final .cta { font-size: 20px; padding: 22px 20px; }
+
+  footer { text-align: center; font-size: 12px; color: #9AA3AD; padding: 26px 18px 34px; }
+
+  /* Animação de entrada */
+  .js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .js .reveal.in { opacity: 1; transform: none; }
+
+  @media (min-width: 768px) {
+    section { padding: 64px 0; }
+    .hero { padding-top: 52px; }
+    .hero h1 { font-size: 44px; }
+    .hero .sub { font-size: 19px; }
+    .section-title { font-size: 32px; }
+    .topbar { font-size: 15px; }
+    .steps { grid-template-columns: repeat(3, 1fr); }
+    .step { flex-direction: column; text-align: center; padding: 24px 18px; }
+    .offer-body { padding: 30px 36px 32px; }
+    .price .now { font-size: 64px; }
+    .why h2, .final h2 { font-size: 32px; }
+  }
+  @media (max-width: 440px) {
+    .seal { width: 72px; height: 72px; font-size: 22px; }
+    .kirvano-payment-trigger { font-size: 18px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    .js .reveal { opacity: 1; transform: none; }
+  }
+</style>
+<script>document.documentElement.className += " js";</script>
+<style>.mockup{max-width:360px}</style>
+</head>
+<body>
+
+<!-- ============================================================
+     CONFIGURAR ANTES DE PUBLICAR (procure por COLE_AQUI e R$ XX / R$ 47):
+     - R$ XX  = preço do upsell (página anterior)
+     - R$ 47  = preço deste downsell
+     - d56b383e-a302-4d7e-bc9a-b895b5b1ca8d = ID da oferta na Kirvano (aparece 2x)
+     ============================================================ -->
+
+<!-- 1. BARRA FIXA -->
+<div class="topbar" role="alert">
+  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+  <span>Última oferta antes do seu acesso. Não feche esta página.</span>
+</div>
+
+<!-- 2. HERO -->
+<section class="hero">
+  <div class="wrap">
+    <span class="pill">30% OFF · SÓ NESTA PÁGINA</span>
+    <h1>Tudo bem. Então leve as Fichas de Diagnóstico de Curto <span class="hl">com 30% de desconto</span>.</h1>
+    <p class="sub">As mesmas 30 fichas práticas, nas mesmas 3 categorias e os mesmos 3 bônus. Só o preço muda: de R$ 67 por R$ 47, uma única vez, aqui.</p>
+
+    <div class="mockup">
+      <img src="images/mockup-fichas.jpg" width="900" height="900" fetchpriority="high" alt="Guia Prático Diagnósticos de Curto em Placas Eletrônicas">
+      <div class="seal" aria-hidden="true">-30%</div>
+    </div>
+
+    <a href="#oferta" class="cta">QUERO AS FICHAS POR R$&nbsp;47</a>
+  </div>
+</section>
+
+<!-- 3. LEAD -->
+<section class="alt lead">
+  <div class="wrap">
+    <p class="reveal">Eu entendo. Mais um valor logo depois de uma compra pode pesar.</p>
+    <p class="reveal">Mas o problema que as fichas resolvem não vai embora. Ele aparece na próxima placa que chegar na sua bancada: o multímetro apita, a fonte entra em proteção, um componente esquenta e você não sabe por onde começar.</p>
+    <p class="reveal">O Guia Visual de Componentes te mostra o que é cada peça e para que ela serve. As fichas entram quando a placa está em curto e você precisa achar a origem do problema.</p>
+    <p class="reveal"><strong>Por isso eu não quero que você saia daqui sem elas. Então vou fazer uma coisa que não faço em nenhum outro lugar.</strong></p>
+  </div>
+</section>
+
+<!-- 4. O QUE VOCÊ RECEBE -->
+<section>
+  <div class="wrap">
+    <h2 class="section-title reveal">O que você recebe</h2>
+    <div class="cards">
+      <div class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M9 3v2h6V3"/><path d="M9 11l2 2 4-4"/><path d="M9 17h6"/></svg>
+        </div>
+        <div>
+          <div class="num">10<small>fichas</small></div>
+          <h3>CATEGORIA 1 · Testes e Procedimentos</h3>
+          <p>Como fazer cada teste e interpretar a leitura: inspeção visual, resistência para o terra, modo diodo, fonte em proteção e como confirmar o componente suspeito.</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div>
+          <div class="num">10<small>fichas</small></div>
+          <h3>CATEGORIA 2 · Diagnóstico por Sintoma</h3>
+          <p>Celular que não carrega, falha após líquido, notebook que desarma o carregador, videogame com fonte em proteção, fusível que abre repetidamente e mais.</p>
+        </div>
+      </div>
+      <div class="card reveal">
+        <div class="ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="6" y="6" width="12" height="12" rx="1"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg>
+        </div>
+        <div>
+          <div class="num">10<small>fichas</small></div>
+          <h3>CATEGORIA 3 · Componentes e Regiões</h3>
+          <p>Como confirmar a peça suspeita: TVS, array ESD, diodo schottky, fusível, capacitor cerâmico, shunt, indutor, MOSFET, buck e CI de carga.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bonus reveal">
+      <h3>E MAIS 3 BÔNUS</h3>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>Fluxograma: curto na placa, o que fazer (para imprimir)</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>Tabela de leituras de referência</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#F26B1D" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13M19 12v9H5v-9M7.5 8a2.5 2.5 0 0 1 0-5C11 3 12 8 12 8s1-5 4.5-5a2.5 2.5 0 0 1 0 5"/></svg>Checklist antes de ligar de novo</li>
+      </ul>
+    </div>
+    <p class="access-line reveal">Serve para celulares, notebooks, videogames e eletrônica geral. Acesso imediato, em PDF, para consultar no celular com a placa na bancada.</p>
+  </div>
+</section>
+
+<!-- 5. COMO FUNCIONA -->
+<section class="alt">
+  <div class="wrap">
+    <h2 class="section-title reveal">Como funciona</h2>
+    <ol class="steps">
+      <li class="step reveal"><span class="n">1</span><p>A placa chegou em curto ou com defeito</p></li>
+      <li class="step reveal"><span class="n">2</span><p>Você procura o sintoma e segue a ficha</p></li>
+      <li class="step reveal"><span class="n">3</span><p>Acha a peça, confirma e faz o reparo</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 6. CAIXA DE OFERTA -->
+<section>
+  <div class="wrap">
+    <div class="offer" id="oferta">
+      <div class="offer-head">OFERTA ÚNICA DESTA PÁGINA</div>
+      <div class="offer-body">
+        <ul class="checklist">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1F9D55"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>10 fichas de Testes e Procedimentos</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1F9D55"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>10 fichas de Diagnóstico por Sintoma</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1F9D55"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>10 fichas de Componentes e Regiões</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1F9D55"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>3 bônus</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11" fill="#1F9D55"/><path d="M7 12.5l3.2 3.2L17 9" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>Os mesmos arquivos da oferta anterior</li>
+        </ul>
+
+        <div class="price">
+          <span class="old">De R$ 67</span>
+          <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="#6B7580" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="4" x2="12" y2="20"/><polyline points="6 14 12 20 18 14"/></svg>
+          <div class="price-row">
+            <span class="now"><small>por</small>R$ 47</span>
+            <span class="off-tag">30% OFF</span>
+          </div>
+        </div>
+        <p class="per">Dá R$ 1,57 por ficha. Pagamento único, acesso vitalício.</p>
+
+        <a href="https://pay.kirvano.com/d56b383e-a302-4d7e-bc9a-b895b5b1ca8d" class="kirvano-payment-trigger">
+          <span class="main">SIM! QUERO AS FICHAS POR R$&nbsp;47</span>
+          <span class="small">Adicionar ao meu pedido</span>
+        </a>
+
+        <div class="secure">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6B7580" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+          <span>Pagamento seguro processado pela Kirvano</span>
+        </div>
+
+        <button type="button" class="kirvano-refuse-trigger">Não, obrigado. Prefiro seguir sem as fichas, mesmo com 30% de desconto.</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. POR QUE ESTE PREÇO -->
+<section class="why">
+  <div class="wrap">
+    <h2 class="reveal">Por que com desconto?</h2>
+    <p class="reveal">Porque prefiro que você saia daqui com as fichas do que sem elas. Este preço só existe nesta página. Se você fechar ou recusar, segue direto para o seu acesso e esta oferta não aparece de novo.</p>
+    <a href="#oferta" class="cta orange reveal">QUERO APROVEITAR OS 30%</a>
+  </div>
+</section>
+
+<!-- 8. PERGUNTAS RÁPIDAS -->
+<section class="alt faq">
+  <div class="wrap">
+    <h2 class="section-title reveal">Perguntas rápidas</h2>
+    <details class="reveal">
+      <summary>É o mesmo material da página anterior?</summary>
+      <p class="ans">Sim. As mesmas 30 fichas, nas mesmas 3 categorias, com os mesmos 3 bônus. Só o preço é diferente.</p>
+    </details>
+    <details class="reveal">
+      <summary>Como eu recebo?</summary>
+      <p class="ans">Junto com o acesso da sua compra, na sua área de compras da Kirvano e no seu e-mail.</p>
+    </details>
+    <details class="reveal">
+      <summary>Funciona no celular?</summary>
+      <p class="ans">Sim. É um PDF para abrir no celular, no tablet ou no computador, e você pode imprimir se quiser.</p>
+    </details>
+    <details class="reveal">
+      <summary>Serve para quem está começando?</summary>
+      <p class="ans">Sim. Cada ficha mostra quando usar, o que preparar, os testes em ordem, como interpretar a leitura e o erro mais comum. É material de consulta para usar com a placa na bancada.</p>
+    </details>
+  </div>
+</section>
+
+<!-- 9. CTA FINAL -->
+<section class="final">
+  <div class="wrap">
+    <h2 class="reveal">Última chance de levar as 30 fichas por R$ 47.</h2>
+    <a href="#oferta" class="cta reveal">QUERO AS FICHAS POR R$&nbsp;47</a>
+  </div>
+</section>
+
+<!-- 10. RODAPÉ -->
+<footer>© Todos os direitos reservados.</footer>
+
+<script>
+  (function () {
+    var els = document.querySelectorAll(".reveal");
+    if (!("IntersectionObserver" in window)) {
+      for (var i = 0; i < els.length; i++) els[i].classList.add("in");
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    for (var j = 0; j < els.length; j++) io.observe(els[j]);
+  })();
+</script>
+
+<!-- SCRIPT DE UPSELL ONE CLICK DA KIRVANO -->
+<script>
+  var offer = "d56b383e-a302-4d7e-bc9a-b895b5b1ca8d";
+  var nextPageURL = null;
+  var refusePageURL = null;
+</script>
+<script src="https://snippets.kirvano.com/upsell.min.js"></script>
+</body>
+</html>
